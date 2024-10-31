@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B7A184F-DD24-4A1F-AE00-98F7EC74C42C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>More.Lfd</AssemblyName>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <ErrorReport>prompt</ErrorReport>
+    <OutputPath Condition=" '$(Platform)' == 'AnyCPU' ">bin\$(Configuration)\</OutputPath>
+    <OutputPath Condition=" '$(Platform)' != 'AnyCPU' ">bin\$(Platform)\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>    
+    <ProjectReference Include="..\Core\More.Core.csproj" />
+  </ItemGroup>
+<!--  <ItemGroup>-->
+<!--    <Compile Include="Properties\AssemblyInfo.cs" />-->
+<!--    <Compile Include="Lfd.cs" />-->
+<!--    <Compile Include="LfdReader.cs" />-->
+<!--  </ItemGroup>-->
+<!--  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />-->
+</Project>

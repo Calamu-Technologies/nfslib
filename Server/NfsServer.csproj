@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C92FA8B0-E5A5-4A36-B026-B87F446AD09D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>NfsServer</AssemblyName>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <ErrorReport>prompt</ErrorReport>
+    <OutputPath Condition=" '$(Platform)' == 'AnyCPU' ">bin\$(Configuration)\</OutputPath>
+    <OutputPath Condition=" '$(Platform)' != 'AnyCPU' ">bin\$(Platform)\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\More.Core.csproj" /> 
+    <ProjectReference Include="..\Collections\More.Collections.csproj" /> 
+    <ProjectReference Include="..\Config\More.Config.csproj" /> 
+    <ProjectReference Include="..\Platform\More.Platform.csproj" /> 
+    <ProjectReference Include="..\Net\More.Net.csproj" /> 
+  </ItemGroup>
+<!--  <ItemGroup>-->
+<!--    <Compile Include="Properties\AssemblyInfo.cs" />-->
+<!--    <Compile Include="NfsServerProgram.cs" />-->
+<!--  </ItemGroup>-->
+<!--  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />-->
+</Project>

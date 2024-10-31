@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40C821C1-E019-46D1-9365-8AD5F5925ADE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>More.Net</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <ErrorReport>prompt</ErrorReport>
+    <OutputPath Condition=" '$(Platform)' == 'AnyCPU' ">bin\$(Configuration)\</OutputPath>
+    <OutputPath Condition=" '$(Platform)' != 'AnyCPU' ">bin\$(Platform)\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>    
+    <ProjectReference Include="..\Core\More.Core.csproj" />    
+    <ProjectReference Include="..\ByteString\More.ByteString.csproj" />
+    <ProjectReference Include="..\Collections\More.Collections.csproj" /> 
+    <ProjectReference Include="..\Platform\More.Platform.csproj" /> 
+    <ProjectReference Include="..\Reflection\More.Reflection.csproj" /> 
+  </ItemGroup>
+</Project>
